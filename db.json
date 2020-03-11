@@ -15,6 +15,14 @@
       "value": 300,
       "operationDate": "1992-01-14",
       "description": "teste"
+    },
+    {
+      "place": "Teste",
+      "operationType": "Crédito",
+      "value": 123,
+      "operationDate": "2020-03-11",
+      "description": "teste",
+      "id": 3
     }
   ],
   "login": [

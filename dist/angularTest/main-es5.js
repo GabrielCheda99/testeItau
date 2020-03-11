@@ -2494,31 +2494,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     });
 
     function generatePdfBody(expenses, expenseList, datePeriod) {
-      // expenses.filter(e => e.operationDate)
-      expenses.forEach(function (expense) {
-        expenseList.push([{
-          columns: [{
-            text: expense.place,
-            margin: [0, 10, 0, 10]
-          }, {
-            text: expense.operationType,
-            margin: [10, 10, 0, 10]
-          }, {
-            text: expense.value,
-            margin: [10, 10, 0, 10]
-          }, {
-            text: expense.description,
-            margin: [0, 10, 0, 10]
-          }, {
-            text: expense.operationDate,
-            margin: [0, 10, 0, 10]
-          }]
-        }]);
+      expenses.filter(function (item) {
+        return filterExpenseByDate(item, datePeriod);
+      }).forEach(function (expense) {
+        return populateColums(expenseList, expense);
       });
     }
 
     function generatePdfHeaders(expenseList) {
-      expenseList.push([{
+      return expenseList.push([{
         columns: [{
           text: "Estabelecimento",
           bold: true,
@@ -2546,7 +2530,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           margin: [0, 10, 0, 10]
         }]
       }]);
-      return expenseList;
+    }
+
+    function filterExpenseByDate(item, datePeriod) {
+      var initialDate = new Date(datePeriod.dataInicial);
+      var finalDate = new Date(datePeriod.dataFinal);
+      var expenseDate = new Date(item.operationDate);
+
+      if (initialDate <= expenseDate && finalDate >= expenseDate) {
+        return item;
+      }
+    }
+
+    function populateColums(expenseList, expense) {
+      expenseList.push([{
+        columns: [{
+          text: expense.place,
+          margin: [0, 10, 0, 10]
+        }, {
+          text: expense.operationType,
+          margin: [10, 10, 0, 10]
+        }, {
+          text: expense.value,
+          margin: [10, 10, 0, 10]
+        }, {
+          text: expense.description,
+          margin: [0, 10, 0, 10]
+        }, {
+          text: expense.operationDate,
+          margin: [0, 10, 0, 10]
+        }]
+      }]);
     }
     /***/
 
