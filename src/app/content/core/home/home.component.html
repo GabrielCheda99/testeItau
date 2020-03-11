@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="center-text">
+        <h2>Lista de Despesas</h2>
+        <app-search-bar (searchListEventEmitter)="filter = $event"></app-search-bar>
+        <app-debit-credit-list [filtered]="filter"></app-debit-credit-list>
+        <div class="d-flex justify-content-end">
+            <button
+                type="button"
+                class="btn btn-primary btn-sm"
+                (click)="redirectToRegistration()"
+            >
+                Cadastrar nova despesa
+            </button>
+        </div>
+    </div>
+</div>

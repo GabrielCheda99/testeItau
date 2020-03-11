@@ -1,0 +1,17 @@
+<div class="container">
+    <form class="formLoginFormSize">
+        <div class="d-flex justify-content-end align-items-center ">
+            <div class="mb-3">
+                <input
+                    placeholder="pesquisa..."
+                    type="search"
+                    name="query"
+                    [(ngModel)]="query"
+                    (keyup)="search($event)"
+                    #searchedValue
+                    class="form-control"
+                >
+            </div>
+        </div>
+    </form>
+</div>

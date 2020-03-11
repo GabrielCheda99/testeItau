@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-light">
+
+    <a
+        class="navbar-brand"
+        href="/home"
+    >
+
+        <img
+            src="../.././../../assets/logoItau.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt
+        >
+    </a>
+
+    <div *ngIf="isLoggedIn()">
+        <a href="/#">logout</a>
+    </div>
+</nav>
+<ng-content></ng-content>
