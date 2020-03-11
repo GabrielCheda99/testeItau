@@ -23,6 +23,22 @@
       "operationDate": "2020-03-11",
       "description": "teste",
       "id": 3
+    },
+    {
+      "place": "teste",
+      "operationType": "Crédito",
+      "value": 200,
+      "operationDate": "2020-03-10",
+      "description": "teste",
+      "id": 4
+    },
+    {
+      "place": "teste",
+      "operationType": "Débito",
+      "value": 100,
+      "operationDate": "2020-03-12",
+      "description": "teste",
+      "id": 5
     }
   ],
   "login": [
