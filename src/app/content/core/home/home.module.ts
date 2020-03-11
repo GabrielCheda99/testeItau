@@ -8,13 +8,13 @@ import { HomeRoutingModule } from './home-routing.module';
 
 import { SharedModule } from 'src/app/shared/shared.module';
 import { LayoutModule } from '../../layout/layout.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 import { HomeComponent } from './home.component';
 import { DebitCreditListComponent } from '../components/debit-credit-list/debit-credit-list.component';
 import { RegiterDebitCreditComponent } from '../components/regiter-debit-credit/regiter-debit-credit.component';
-import { NgxPaginationModule } from 'ngx-pagination';
-
 
 const exportableComponents = [
   SearchBarComponent,
@@ -25,7 +25,7 @@ const exportableComponents = [
 
 @NgModule({
   declarations: [exportableComponents],
-  imports: [CommonModule, FormsModule, HomeRoutingModule, BrowserAnimationsModule, BrowserModule, LayoutModule, SharedModule, NgxPaginationModule ],
+  imports: [CommonModule, FormsModule, HomeRoutingModule, BrowserAnimationsModule, BrowserModule, LayoutModule, SharedModule, NgxPaginationModule, OrderModule ],
   exports: [exportableComponents]
 })
 

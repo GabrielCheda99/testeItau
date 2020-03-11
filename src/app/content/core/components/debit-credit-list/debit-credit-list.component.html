@@ -4,20 +4,26 @@
             <th
                 scope="col"
                 class="text-center"
+                (click)="sort('place')"
             >
                 Estabelecimento
+                <span *ngIf="key =='place'">{{reverse ? '▲' : '▼'}}</span>
             </th>
             <th
                 scope="col"
                 class="text-center"
+                (click)="sort('operationType')"
             >
                 Tipo de Operação
+                <span *ngIf="key =='operationType'">{{reverse ? '▲' : '▼'}}</span>
             </th>
             <th
                 scope="col"
                 class="text-center"
+                (click)="sort('value')"
             >
                 Valor
+                <span *ngIf="key =='value'">{{reverse ? '▲' : '▼'}}</span>
             </th>
             <th
                 scope="col"
@@ -25,20 +31,40 @@
             >
                 Descrição
             </th>
+            <th
+                scope="col"
+                class="text-center"
+                (click)="sort('operationDate')"
+            >
+                Data da Operação
+                <span *ngIf="key =='operationDate'">{{reverse ? '▲' : '▼'}}</span>
+            </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of searchListResult | expensesFilter: filtered | paginate: { itemsPerPage: 5, currentPage: paginaAtual }; let i=index">
+        <tr *ngIf="!searchListResult.length">
+            <td
+                colspan="5"
+                class="text-center"
+            >
+                Não existem despesas cadastradas
+            </td>
+        </tr>
+        <tr *ngFor="let item of searchListResult | expensesFilter: filtered | orderBy: key : reverse | paginate: { itemsPerPage: 10, currentPage: firstPage, totalItems: totalItems } ; let i=index">
             <td class="text-center">{{item.place}}</td>
             <td class="text-center">{{item.operationType}}</td>
             <td class="text-center">{{item.value}}</td>
             <td class="text-center">{{item.description}}</td>
+            <td class="text-center">
+                {{item.operationDate  | date: 'dd/MM/yyyy'}}
+            </td>
         </tr>
     </tbody>
-            <tr>
-                <td colspan="13">
+    <tbody>
+        <tr>
+            <td colspan="5">
                 <pagination-controls
-                    (pageChange)="paginaAtual = $event"
+                    (pageChange)="firstPage = $event"
                     previousLabel="Anterior"
                     nextLabel="Próximo"
                     maxSize="10"
@@ -46,5 +72,6 @@
                     class="text-center"
                 ></pagination-controls>
             </td>
-            </tr>
+        </tr>
+    </tbody>
 </table>

@@ -2,94 +2,19 @@
   "expenses": [
     {
       "id": 1,
-      "place": "json-server 1",
-      "value": 300,
-      "operationType": "Débito",
-      "description": "comprando pao na casa da xuxa"
-    },
-    {
-      "id": 2,
-      "place": "jsona-server 2",
-      "value": 300,
-      "operationType": "Débito",
-      "description": "comprando pao na casa da xuxa"
-    },
-    {
-      "id": 3,
-      "place": "json-server 3",
-      "value": 300,
-      "operationType": "Débito",
-      "description": "comprando pao na casa da xuxa"
-    },
-    {
-      "id": 4,
-      "place": "json-server 4",
-      "value": 300,
-      "operationType": "Débito",
-      "description": "comprando pao na casa da xuxa"
-    },
-    {
-      "id": 1,
-      "place": "json-server 1",
-      "value": 300,
-      "operationType": "Débito",
-      "description": "comprando pao na casa da xuxa"
-    },
-    {
-      "id": 2,
-      "place": "jsona-server 2",
-      "value": 300,
-      "operationType": "Débito",
-      "description": "comprando pao na casa da xuxa"
-    },
-    {
-      "id": 3,
-      "place": "json-server 3",
-      "value": 300,
-      "operationType": "Débito",
-      "description": "comprando pao na casa da xuxa"
-    },
-    {
-      "id": 4,
-      "place": "json-server 4",
-      "value": 300,
-      "operationType": "Débito",
-      "description": "comprando pao na casa da xuxa"
-    },
-    {
-      "place": "Teste",
-      "operationType": "Débito",
-      "value": 123,
-      "description": "123",
-      "id": 5
-    },
-    {
-      "place": "131231",
-      "operationType": "Débito",
-      "value": 123123,
-      "description": "1232",
-      "id": 6
-    },
-    {
-      "place": "Teste",
-      "operationType": "Débito",
-      "value": 123123,
-      "description": "123123123",
-      "id": 7
-    },
-    {
       "place": "teste",
       "operationType": "Crédito",
-      "value": 123123,
-      "description": "1231231",
-      "id": 8
+      "value": 300,
+      "operationDate": "2018-05-01",
+      "description": "testando"
     },
     {
-      "place": "Teste",
-      "operationType": "Débito",
-      "value": 123,
-      "description": "123",
-      "id": 9
+      "id": 2,
+      "place": "Pão de Açucar",
+      "operationType": "Crédito",
+      "value": 300,
+      "operationDate": "1992-01-14",
+      "description": "teste"
     }
   ],
   "login": [

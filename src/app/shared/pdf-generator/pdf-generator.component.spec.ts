@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthLibComponent } from './auth-lib.component';
+import { PdfGeneratorComponent } from './pdf-generator.component';
 
-describe('AuthLibComponent', () => {
-  let component: AuthLibComponent;
-  let fixture: ComponentFixture<AuthLibComponent>;
+describe('PdfGeneratorComponent', () => {
+  let component: PdfGeneratorComponent;
+  let fixture: ComponentFixture<PdfGeneratorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthLibComponent ]
+      declarations: [ PdfGeneratorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthLibComponent);
+    fixture = TestBed.createComponent(PdfGeneratorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
