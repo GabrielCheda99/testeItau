@@ -2533,11 +2533,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function filterExpenseByDate(item, datePeriod) {
+      var expenseDate = new Date(item.operationDate);
       var initialDate = new Date(datePeriod.dataInicial);
       var finalDate = new Date(datePeriod.dataFinal);
-      var expenseDate = new Date(item.operationDate);
 
       if (initialDate <= expenseDate && finalDate >= expenseDate) {
+        return item;
+      } else if (initialDate.toString() == 'Invalid Date' && finalDate.toString() == 'Invalid Date') {
+        return item;
+      } else if (initialDate <= expenseDate && finalDate.toString() == "Invalid Date") {
         return item;
       }
     }

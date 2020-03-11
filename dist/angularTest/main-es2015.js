@@ -1231,10 +1231,16 @@ function generatePdfHeaders(expenseList) {
     ]);
 }
 function filterExpenseByDate(item, datePeriod) {
+    let expenseDate = new Date(item.operationDate);
     let initialDate = new Date(datePeriod.dataInicial);
     let finalDate = new Date(datePeriod.dataFinal);
-    let expenseDate = new Date(item.operationDate);
     if (initialDate <= expenseDate && finalDate >= expenseDate) {
+        return item;
+    }
+    else if (initialDate.toString() == 'Invalid Date' && finalDate.toString() == 'Invalid Date') {
+        return item;
+    }
+    else if (initialDate <= expenseDate && finalDate.toString() == "Invalid Date") {
         return item;
     }
 }
